@@ -161,6 +161,9 @@ public class MessageAttributeValue implements Serializable, Cloneable {
      *         compressed data, encrypted data, or images.
      */
     public java.nio.ByteBuffer getBinaryValue() {
+        if (binaryValue != null) {
+            binaryValue.rewind();
+        }
         return binaryValue;
     }
     
